@@ -1,5 +1,8 @@
 # Justificación del Patrón de Diseño: Builder
 
+## Tipo de Patrón
+**Creacional**
+
 ## ¿Por qué se seleccionó el patrón Builder para el Escenario 1?
 
 Para el problema de la compañía automotriz, el principal desafío era la necesidad de crear un objeto `Automóvil` que posee una gran cantidad de configuraciones opcionales.

@@ -1,5 +1,8 @@
 # Justificación del Patrón de Diseño: Bridge
 
+## Tipo de Patrón
+**Estructural**
+
 ## ¿Por qué se seleccionó el patrón Bridge para el Escenario 2?
 
 El sistema de notificaciones enfrentaba un problema clásico de explosión combinatoria al intentar manejar dos dimensiones independientes que crecen a la par:

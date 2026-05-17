@@ -1,5 +1,8 @@
 # Justificación del Patrón de Diseño: Mediator
 
+## Tipo de Patrón
+**De Comportamiento (Behavioral)**
+
 ## ¿Por qué se seleccionó el patrón Mediator para el Escenario 3?
 
 El desarrollo de la aplicación de chat grupal se enfrentaba a un acoplamiento extremo, también conocido como "Código Espagueti" o dependencia $N \times N$.
