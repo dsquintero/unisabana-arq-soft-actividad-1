@@ -1,3 +1,8 @@
+/**
+ * Clase producto es el objetos resultante.
+ * Los productos construidos por distintos objetos constructores
+ * no tienen que pertenecer a la misma jerarquía de clases o interfaz.
+ */
 class Car {
     private final String engineType;
     private final String color;
@@ -7,6 +12,7 @@ class Car {
     private final boolean sunroof;
     private final boolean gpsNavigation;
 
+    // Se usa el constructor para asignar los valores y mantener la inmutabilidad
     public Car(CustomCarBuilder builder) {
         this.engineType = builder.getEngineType();
         this.color = builder.getColor();
@@ -29,6 +35,9 @@ class Car {
     }
 }
 
+/**
+ * sta interfza declara pasos de construcción de producto que todos los tipos de objetos
+ */
 interface CarBuilder {
     CarBuilder setEngineType(String engineType);
     CarBuilder setColor(String color);
@@ -40,6 +49,11 @@ interface CarBuilder {
     Car build();
 }
 
+/**
+ *  Esta clase ofrece distintas implementaciones de los pasos de construcción.
+ *  Los constructores concretos pueden crear productos que no siguen
+ *  la interfaz común.
+ */
 class CustomCarBuilder implements CarBuilder {
     private String engineType;
     private String color;
@@ -109,6 +123,10 @@ class CustomCarBuilder implements CarBuilder {
     }
 }
 
+/**
+ * Esta clase Director define el orden en el que se invocarán los pasos de construcción,
+ * por ende se puede crear y reutilizar configuraciones específicas de los productos
+ */
 class CarDirector {
     private CarBuilder builder;
 
@@ -145,14 +163,14 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== Uso del Builder para un auto personalizado ===");
         CustomCarBuilder customBuilder = new CustomCarBuilder();
-        Car myCustomCar = customBuilder
+        Car productCustomCar = customBuilder
                 .setEngineType("Híbrido")
                 .setColor("Azul Noche")
                 .setGpsNavigation(true)
                 .setSoundSystem("Harman Kardon")
                 .build();
 
-        myCustomCar.showDetails();
+        productCustomCar.showDetails();
 
         System.out.println("\n=== Uso del Director para autos preconfigurados ===");
         CarDirector director = new CarDirector(customBuilder);
